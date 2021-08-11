@@ -1,0 +1,24 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(16)
+    }
+}
+
+dependencies {
+    implementation 'info.picocli:picocli:4.6.1'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.example.CheckSum'
+    }
+}
